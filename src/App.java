@@ -1,6 +1,8 @@
+import Controller.Controller;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-        System.out.println("IT'S WORKING");
+        Controller vista = new Controller();
+        vista.insertarDulce();    
     }
 }

@@ -1,26 +1,24 @@
 package ModeloDulceria;
 
-import java.util.ArrayList;
-
 public class Dulceria {
-    String nombre, categoria;
-    ArrayList <Dulceria> dulces;
-
-    public Dulceria(String nombre_,String categoria_){
-        this.nombre = nombre_;
-        this.categoria = categoria_;
-    }
-
-    public String getNombre(){
-        return nombre;
-    }
-
-    public String getCategoria(){
-        return categoria;
-    }
     
+    String nombreDulce, categoriaDulce;
+    
+    public Dulceria(String nombre, String categoria){
+        this.nombreDulce = nombre;       
+        this.categoriaDulce = categoria;
+    }
+
+    public String getNombreDulce(){
+        return nombreDulce;
+    }
+
+    public String getCategoriaDulce(){
+        return categoriaDulce;
+    }
+    /* 
     public void agregarDulce(Dulceria dulce){
-        this.dulces.add(dulce);
+        dulces.add(dulce);
     }
 
     public void eliminarDulce(Dulceria dulce){
@@ -37,10 +35,10 @@ public class Dulceria {
     
     public Dulceria buscarDulcePorNombre(String nombre_){
         for (Dulceria dulce :  this.dulces){
-            if (dulce.getNombre().toLowerCase().equals(nombre_.toLowerCase())) {
+            if (dulce.getNombreDulce().toLowerCase().equals(nombre_.toLowerCase())) {
                 return dulce;
             }
         }
         return null;
-    }
+    }*/
 }
