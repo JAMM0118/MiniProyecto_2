@@ -1,4 +1,4 @@
-package Dulceria;
+package models;
 
 public class Dulceria {
     
