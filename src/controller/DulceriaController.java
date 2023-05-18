@@ -36,12 +36,12 @@ public class DulceriaController implements ActionListener{
 
     public void buscarPorNombre(String nombre){
         vista.buscarDulcePorNombre(nombre,dulceria.listadoDeDulces());
-        dulceria.buscarDulcePorNombre(nombre);
+        //dulceria.buscarDulcePorNombre(nombre);
     }
 
     public void eliminar(int index){
-        vista.eliminarDulce(index,dulceria.listadoDeDulces());
-        dulceria.eliminarDulce(index);
+        vista.eliminarDulce(index-1,dulceria.listadoDeDulces());
+        //dulceria.eliminarDulce(index-1);
     }
 
     public void actualizar(int index){

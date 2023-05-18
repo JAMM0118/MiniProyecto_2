@@ -2,7 +2,6 @@ package views;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.ResourceBundle.Control;
 
 import controller.DulceriaController;
 import models.Categorias;
@@ -62,8 +61,9 @@ public class ViewConsole implements View{
 
                 case 2: control.listar();
                         read.nextLine();
-                        System.out.print("Selecione el numero en lista del dulce a modificar: ");
+                        System.out.print("\nSelecione el numero en lista del dulce a modificar: ");
                         indice = read.nextInt();
+                        System.out.println("\n¿Que desea modificar?\n");
                         System.out.println("\n1. Modificar nombre");
                         System.out.println("2. Modificar categoria");
                         System.out.println("3. Modificar descripcion");
@@ -107,6 +107,7 @@ public class ViewConsole implements View{
 
         }
         control.actionPerformed(null);
+        read.close();
     }
 
     @Override
@@ -115,7 +116,7 @@ public class ViewConsole implements View{
     }
     @Override
     public void eliminarDulce(int index,ArrayList <Dulce> dulces) {
-        dulces.remove(index-1); 
+        dulces.remove(index); 
     }
     @Override
     public void listadoDeDulces(ArrayList <Dulce> dulces) {

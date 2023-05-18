@@ -23,8 +23,8 @@ public class Dulceria {
     }
 
     public boolean eliminarDulce(int indexDulce) {
-        if ((indexDulce-1) > 0 && (indexDulce-1) <= dulces.size()) {
-            return dulces.remove(indexDulce-1) != null;
+        if ((indexDulce) > 0 && (indexDulce) <= dulces.size()) {
+            return dulces.remove(indexDulce) != null;
         }
         return false;
     }
