@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package views.com.interfaz;
+package com.interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -24,8 +24,9 @@ public class interfaz extends javax.swing.JFrame {
     public interfaz() {
         initComponents();
         
+        
         this.setLocationRelativeTo(this);
-        SetImageLabel(Logo,"src/views/com/images/logo.jpeg");
+        SetImageLabel(Logo,"src/com/images/logo.jpeg");
         
     }
 

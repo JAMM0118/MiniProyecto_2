@@ -40,36 +40,35 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="subtituloNombre3" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
+                              <Component id="subtituloNombre1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="subtituloNombre1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="subtituloNombre" min="-2" max="-2" attributes="0"/>
-                                              <Component id="subtituloNombre2" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jSeparator3" min="-2" pref="190" max="-2" attributes="0"/>
-                                      <Component id="jSeparator2" min="-2" pref="190" max="-2" attributes="0"/>
-                                      <Component id="jSeparator1" min="-2" pref="190" max="-2" attributes="0"/>
-                                      <Component id="nombretxt" min="-2" max="-2" attributes="0"/>
-                                      <Component id="nombretxt1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="nombretxt2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="subtituloNombre" min="-2" max="-2" attributes="0"/>
+                                      <Component id="subtituloNombre2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <Component id="subtituloNombre3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Dulce" min="-2" max="-2" attributes="0"/>
+                              <Component id="jSeparator3" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="jSeparator2" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="jSeparator1" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="nombretxt" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombretxt1" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombretxt2" min="-2" max="-2" attributes="0"/>
+                              <Component id="Dulce1" min="-2" max="-2" attributes="0"/>
+                              <Component id="Dulce2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" pref="103" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="194" max="32767" attributes="0"/>
@@ -90,7 +89,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                           <Component id="nombretxt" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="14" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
@@ -117,17 +116,29 @@
                       </Group>
                       <Component id="subtituloNombre1" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                  <Component id="subtituloNombre3" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace pref="76" max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="subtituloNombre3" min="-2" pref="33" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="Dulce" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="Dulce1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="Dulce2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="tituloinsertar" min="-2" pref="33" max="-2" attributes="0"/>
-                      <EmptySpace pref="461" max="32767" attributes="0"/>
+                      <EmptySpace pref="482" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -286,6 +297,30 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="Dulce">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dulce"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DulceActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="Dulce1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Acido"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Dulce1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="Dulce2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sin azucar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Dulce2ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
