@@ -26,7 +26,7 @@ public class interfaz extends javax.swing.JFrame {
         
         
         this.setLocationRelativeTo(this);
-        SetImageLabel(Logo,"src/com/images/logo.jpeg");
+        SetImageLabel(Logo,"src/views/com/images/logo.jpeg");
         
     }
 
