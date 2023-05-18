@@ -67,6 +67,4 @@ public class DulceriaController implements ActionListener{
         eliminar(index);
         actualizar(index,nombre,descripcion,precio,categoria);   
     }
-    
-    
 }
