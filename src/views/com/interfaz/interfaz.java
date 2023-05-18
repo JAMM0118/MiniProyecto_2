@@ -7,15 +7,21 @@ package views.com.interfaz;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
+import java.util.ArrayList;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+
+import controller.DulceriaController;
+import models.Dulce;
+import views.View;
 
 /**
  *
  * @author DELL
  */
-public class interfaz extends javax.swing.JFrame {
+public class interfaz extends javax.swing.JFrame implements View {
 
     /**
      * Creates new form interfaz
@@ -80,7 +86,7 @@ public class interfaz extends javax.swing.JFrame {
 
         TextoDigiteOpcion.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
         TextoDigiteOpcion.setForeground(new java.awt.Color(255, 255, 255));
-        TextoDigiteOpcion.setText("Digite la opción a realizar");
+        TextoDigiteOpcion.setText("Seleccione la opción a realizar");
 
         Panelinsertar.setBackground(new java.awt.Color(134, 36, 115));
         Panelinsertar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -519,4 +525,39 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel bg;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+    @Override
+    public void iniciar(DulceriaController controller) {
+        setVisible(true);
+        //Dulce dulce = new Dulce(null, ABORT, getName(), null);
+    }
+
+    @Override
+    public Dulce agregarDulce() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'agregarDulce'");
+    }
+
+    @Override
+    public void eliminarDulce(int index, ArrayList<Dulce> dulces) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'eliminarDulce'");
+    }
+
+    @Override
+    public void listadoDeDulces(ArrayList<Dulce> dulces) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'listadoDeDulces'");
+    }
+
+    @Override
+    public void buscarDulcePorNombre(String nombreDulce, ArrayList<Dulce> dulce) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscarDulcePorNombre'");
+    }
+
+    @Override
+    public void actualizarDulce(Dulce dulce, int index) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actualizarDulce'");
+    }
 }
