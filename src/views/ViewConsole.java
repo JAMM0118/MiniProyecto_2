@@ -23,7 +23,7 @@ public class ViewConsole implements View{
 
 
         while(continuar){
-            
+            System.out.print("\n");
             System.out.println("----WELCOME-----");
             System.out.println("----OPCIONES----");
             System.out.println("1. Insertar dulce");
@@ -63,7 +63,7 @@ public class ViewConsole implements View{
                         read.nextLine();
                         System.out.print("\nSelecione el numero en lista del dulce a modificar: ");
                         indice = read.nextInt();
-                        System.out.println("\n¿Que desea modificar?\n");
+                        System.out.println("\n¿Que desea modificar?");
                         System.out.println("\n1. Modificar nombre");
                         System.out.println("2. Modificar categoria");
                         System.out.println("3. Modificar descripcion");
@@ -75,12 +75,23 @@ public class ViewConsole implements View{
                                 read.nextLine();
                                 System.out.print("Digite el nuevo nombre: ");
                                 nombre = read.nextLine();
-                                
-
-
+                                control.actualizar(indice,nombre,null,0,null);break;
                             case 2:
+                                read.nextLine();
+                                System.out.print("Digite la nueva categoria (Acido -Sin Azucar - Dulce): ");
+                                String ayuda = read.nextLine();
+                                categoria = Categorias.valueOf(ayuda.toUpperCase());
+                                control.actualizar(indice,null,null,0,categoria);break;
                             case 3:
+                                read.nextLine();
+                                System.out.print("Digite la nueva descripcion: ");
+                                descripcion = read.nextLine();
+                                control.actualizar(indice,null,descripcion,0,null);break;
                             case 4:
+                                read.nextLine();
+                                System.out.print("Digite el nuevo precio: ");
+                                precio = read.nextInt();
+                                control.actualizar(indice,null,null,precio,null);break;
                         }
                         
 
@@ -120,6 +131,7 @@ public class ViewConsole implements View{
     }
     @Override
     public void listadoDeDulces(ArrayList <Dulce> dulces) {
+        System.out.print("\n -- Lista de dulces --"+"\n");
         int i=1;
         for(Dulce dulce : dulces){
             System.out.print(i+". " + dulce + " ");
@@ -128,6 +140,7 @@ public class ViewConsole implements View{
     }
     @Override
     public void buscarDulcePorNombre(String nombreDulce, ArrayList<Dulce> dulces) {
+        System.out.print("\nInformacion del dulce buscado"+"\n");
         for(Dulce dulce : dulces){
             if (dulce.getNombre().toLowerCase().equals(nombreDulce.toLowerCase())) {
                 System.out.println(dulce+"");
@@ -135,9 +148,7 @@ public class ViewConsole implements View{
         }
     }
     @Override
-    public void actualizarDulce( Dulce dulce,int index) {
-        //dulceria.set(index,dulce);
-    }
+    public void actualizarDulce( Dulce dulce,int index) {}
 
     
     

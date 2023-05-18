@@ -10,8 +10,8 @@ import models.Dulceria;
 
 public class DulceriaController implements ActionListener{
     Categorias categoria;
-    String nombre;
-    int index;
+    String nombre,descripcion;
+    int index,precio;
     Dulce dulce;
     Dulceria dulceria;
     View vista;
@@ -36,17 +36,28 @@ public class DulceriaController implements ActionListener{
 
     public void buscarPorNombre(String nombre){
         vista.buscarDulcePorNombre(nombre,dulceria.listadoDeDulces());
-        //dulceria.buscarDulcePorNombre(nombre);
+        
     }
 
     public void eliminar(int index){
         vista.eliminarDulce(index-1,dulceria.listadoDeDulces());
-        //dulceria.eliminarDulce(index-1);
     }
 
-    public void actualizar(int index){
-        vista.actualizarDulce(dulce, index);
-        dulceria.actualizarDulce(dulce, index);
+    public void actualizar(int index, String nombre, String descripcion, int precio, Categorias categoria){
+        dulce = dulceria.listadoDeDulces().get(index-1);
+        if(nombre != null){
+            dulce.setNombre(nombre);    
+        }
+        if(categoria != null){
+            dulce.setCategoria(categoria);
+        }
+        if(descripcion != null){
+            dulce.setDescripcion(descripcion);
+        }
+        if(precio != 0){
+            dulce.setPrecio(precio);
+        }
+        dulceria.actualizarDulce(dulce, index-1);
     }
     
     public void actionPerformed(ActionEvent e){
@@ -54,7 +65,7 @@ public class DulceriaController implements ActionListener{
         listar();
         buscarPorNombre(nombre);
         eliminar(index);
-        actualizar(index);   
+        actualizar(index,nombre,descripcion,precio,categoria);   
     }
     
     
