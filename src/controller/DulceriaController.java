@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import views.View;
 import models.Categorias;
@@ -25,8 +26,9 @@ public class DulceriaController implements ActionListener{
         this.vista = vista;
     }
 
-    public void insertar(Dulce dulce){
-        dulce = vista.agregarDulce(); 
+    public void insertar(){
+        dulce = vista.getDulce();
+        dulce.setId(dulceria.listadoDeDulces().size());
         dulceria.insertarNuevoDulce(dulce);  
     }
 
@@ -34,14 +36,25 @@ public class DulceriaController implements ActionListener{
         vista.listadoDeDulces(dulceria.listadoDeDulces());
     }
 
-    public void buscarPorNombre(String nombre){
-        vista.buscarDulcePorNombre(nombre,dulceria.listadoDeDulces());
-        
+    public Dulce buscarPorNombre(String nombre){
+        return dulceria.buscarDulcePorNombre(nombre);
     }
 
     public void eliminar(int index){
-        vista.eliminarDulce(index-1,dulceria.listadoDeDulces());
+        dulceria.eliminarDulce(index);
     }
+
+
+    public String[] listadoDulces(){
+        String[] dulcesStrings = new String[dulceria.listadoDeDulces().size()];
+        ArrayList<Dulce> dulces = dulceria.listadoDeDulces();
+        for (int i = 0; i < dulcesStrings.length; i++) {
+            dulcesStrings[i] = dulces.get(i).toString();
+        }
+
+        return dulcesStrings;
+    }
+
 
     public void actualizar(int index, String nombre, String descripcion, int precio, Categorias categoria){
         dulce = dulceria.listadoDeDulces().get(index-1);
@@ -59,12 +72,8 @@ public class DulceriaController implements ActionListener{
         }
         dulceria.actualizarDulce(dulce, index-1);
     }
-    
+    @Override
     public void actionPerformed(ActionEvent e){
-        insertar(dulce);
-        listar();
-        buscarPorNombre(nombre);
-        eliminar(index);
-        actualizar(index,nombre,descripcion,precio,categoria);   
+        
     }
 }

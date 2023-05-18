@@ -5,6 +5,7 @@ public class Dulce {
     private int precio;
     private Categorias categoria;
     
+    private int id;
     public Dulce(String nombre, int precio, String descripcion, Categorias categoria) {
         this.nombre = nombre;
         this.precio = precio;
@@ -15,6 +16,14 @@ public class Dulce {
     public Categorias getCategoria(){
         return categoria;
     }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -39,7 +48,7 @@ public class Dulce {
     }
     @Override
     public String toString() {
-        return "Nombre: " + nombre + " -- Categoría: " + categoria + " -- Precio: " + precio+
-        "  -- Descripcion: "+ descripcion + "\n";
+        return "Nombre: " + nombre + " -- Categoría: " + categoria + " -- Precio: " + precio;
     }
 }
+

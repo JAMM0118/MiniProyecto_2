@@ -8,9 +8,10 @@ import models.Dulce;
 public interface View {
     
     public void iniciar(DulceriaController controller);
+    public Dulce getDulce();
+    public void setDulce(Dulce dulce);
     
-    public Dulce agregarDulce();
-    public void eliminarDulce(int index,ArrayList <Dulce> dulces);
+    public void eliminarDulce(int index);
     public void listadoDeDulces(ArrayList<Dulce> dulces);
     public void buscarDulcePorNombre(String nombreDulce, ArrayList<Dulce> dulce);
     public void actualizarDulce(Dulce dulce,int index);    

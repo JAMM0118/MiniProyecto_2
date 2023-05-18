@@ -1,15 +1,13 @@
 
-
 import controller.DulceriaController;
 import models.Dulceria;
-import views.ViewConsole;
 import views.View;
-import views.com.interfaz.interfaz;
+import views.DulceriaGUI;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        View vista = new DulceriaGUI();
         Dulceria dulceria = new Dulceria();
-        View vista = new interfaz();
         DulceriaController control = new DulceriaController(dulceria, vista);
         control.inicializacion();
     }

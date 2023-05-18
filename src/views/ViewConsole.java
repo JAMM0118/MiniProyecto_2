@@ -7,7 +7,7 @@ import controller.DulceriaController;
 import models.Categorias;
 import models.Dulce;
 
-public class ViewConsole implements View{
+public class ViewConsole {
     String nombre;
     String descripcion;
     Categorias categoria;
@@ -15,7 +15,7 @@ public class ViewConsole implements View{
     Dulce candy;
     DulceriaController controller;
 
-    @Override
+   
     public void iniciar(DulceriaController control){
         boolean continuar = true;
         Scanner read = new Scanner(System.in);
@@ -56,8 +56,8 @@ public class ViewConsole implements View{
                     String category = read.nextLine();
                     categoria = Categorias.valueOf(category.toUpperCase());
                     
-                    candy = new Dulce(nombre, precio, descripcion, categoria);
-                    control.insertar(candy); break;
+                    candy= new Dulce(nombre, precio, descripcion, categoria);
+                    control.insertar(); break;
 
                 case 2: control.listar();
                         read.nextLine();
@@ -117,15 +117,15 @@ public class ViewConsole implements View{
         read.close();
     }
 
-    @Override
-    public Dulce agregarDulce() {
+ 
+    public Dulce agregarDulce(Dulce dulce) {
         return candy;
     }
-    @Override
+
     public void eliminarDulce(int index,ArrayList <Dulce> dulces) {
         dulces.remove(index); 
     }
-    @Override
+
     public void listadoDeDulces(ArrayList <Dulce> dulces) {
         System.out.print("\n -- Lista de dulces --"+"\n");
         int i=1;
@@ -134,7 +134,7 @@ public class ViewConsole implements View{
             i++;
         }
     }
-    @Override
+
     public void buscarDulcePorNombre(String nombreDulce, ArrayList<Dulce> dulces) {
         System.out.print("\nInformacion del dulce buscado"+"\n");
         for(Dulce dulce : dulces){
@@ -143,6 +143,6 @@ public class ViewConsole implements View{
             }
         }
     }
-    @Override
+
     public void actualizarDulce( Dulce dulce,int index) {}
 }

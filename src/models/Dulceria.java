@@ -23,10 +23,15 @@ public class Dulceria {
     }
 
     public boolean eliminarDulce(int indexDulce) {
-        if ((indexDulce) > 0 && (indexDulce) <= dulces.size()) {
-            return dulces.remove(indexDulce) != null;
+     return dulces.remove(indexDulce) != null;
+    
+    }
+
+    public Dulce getDulce(int indexDulce){
+        if ((indexDulce) >= 0 && (indexDulce) < dulces.size()) {
+            return dulces.get(indexDulce);
         }
-        return false;
+        return null;
     }
 
     public boolean insertarNuevoDulce(Dulce dulce) {
