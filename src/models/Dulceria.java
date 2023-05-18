@@ -9,8 +9,8 @@ public class Dulceria {
         dulces = new ArrayList<Dulce>();
     }
 
-    public Dulce[] listadoDeDulces() {
-        return (Dulce[]) dulces.toArray();
+    public ArrayList<Dulce> listadoDeDulces() {
+        return  dulces;
     }
 
     public Dulce buscarDulcePorNombre(String nombreDulce) {
@@ -23,8 +23,8 @@ public class Dulceria {
     }
 
     public boolean eliminarDulce(int indexDulce) {
-        if (indexDulce > 0 && indexDulce <= dulces.size()) {
-            return dulces.remove(indexDulce) != null;
+        if ((indexDulce-1) > 0 && (indexDulce-1) <= dulces.size()) {
+            return dulces.remove(indexDulce-1) != null;
         }
         return false;
     }
