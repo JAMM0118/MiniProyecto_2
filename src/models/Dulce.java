@@ -39,7 +39,7 @@ public class Dulce {
     }
     @Override
     public String toString() {
-        return "Nombre: " + nombre + " -- Categoría: " + categoria + " -- Precio: " +precio+
+        return "Nombre: " + nombre + " -- Categoría: " + categoria + " -- Precio: " + precio+
         "  -- Descripcion: "+ descripcion + "\n";
     }
 }

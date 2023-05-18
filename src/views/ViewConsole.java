@@ -93,8 +93,6 @@ public class ViewConsole implements View{
                                 precio = read.nextInt();
                                 control.actualizar(indice,null,null,precio,null);break;
                         }
-                        
-
                     break;
 
                 case 3: 
@@ -114,8 +112,6 @@ public class ViewConsole implements View{
                     
                 case 6: System.exit(0);
             }
-            
-
         }
         control.actionPerformed(null);
         read.close();
@@ -149,7 +145,4 @@ public class ViewConsole implements View{
     }
     @Override
     public void actualizarDulce( Dulce dulce,int index) {}
-
-    
-    
 }
