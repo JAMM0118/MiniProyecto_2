@@ -9,6 +9,7 @@ public interface DulceriaView {
     public void actualizarDulce();
     public Dulce buscarDulcePorNombre(String nombreDulce);
     public Dulce getDulce();
-    public void actilizarVista();
+    public void actualizarVista();
 
 }
+
