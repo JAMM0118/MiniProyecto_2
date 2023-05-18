@@ -1,6 +1,12 @@
+import controller.DulceriaController;
+import models.Dulceria;
+import views.ViewConsole;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-        System.out.println("IT'S WORKING");
+        Dulceria dulceria = new Dulceria();
+        ViewConsole vista = new ViewConsole();
+        DulceriaController control = new DulceriaController(dulceria, vista);
+        control.inicializacion();
     }
 }
