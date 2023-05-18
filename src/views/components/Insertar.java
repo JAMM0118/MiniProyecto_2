@@ -301,8 +301,6 @@ models.Dulce dulce;
         System.out.println(e.toString());
         return;
       }
-      
-
     }
 
     private void DulceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DulceActionPerformed
