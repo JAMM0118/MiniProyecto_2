@@ -12,7 +12,7 @@ public class ViewConsole implements View{
     String descripcion;
     Categorias categoria;
     int precio,indice;
-    Dulce prueba;
+    Dulce candy;
     DulceriaController controller;
 
     @Override
@@ -56,8 +56,8 @@ public class ViewConsole implements View{
                     String category = read.nextLine();
                     categoria = Categorias.valueOf(category.toUpperCase());
                     
-                    prueba = new Dulce(nombre, precio, descripcion, categoria);
-                    control.insertar(prueba); break;
+                    candy = new Dulce(nombre, precio, descripcion, categoria);
+                    control.insertar(candy); break;
 
                 case 2: control.listar();
                         read.nextLine();
@@ -119,7 +119,7 @@ public class ViewConsole implements View{
 
     @Override
     public Dulce agregarDulce() {
-        return prueba;
+        return candy;
     }
     @Override
     public void eliminarDulce(int index,ArrayList <Dulce> dulces) {
