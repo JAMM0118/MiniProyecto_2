@@ -7,7 +7,7 @@ import controller.DulceriaController;
 import models.Categorias;
 import models.Dulce;
 
-public class ViewConsole {
+public class ViewConsole{
     String nombre;
     String descripcion;
     Categorias categoria;

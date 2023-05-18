@@ -279,12 +279,10 @@ models.Dulce dulce;
         dulce.setNombre(nombretxt.getText());
         dulce.setPrecio(precio);
         dulce.setDescripcion(nombretxt2.getText());
-        for (Categorias categoria : Categorias.values()) {
-            if(categoria.name().equals(categoriaSelect)){
-                dulce.setCategoria(categoria);
-               break;
-            }
-        }
+        
+        Categorias categoria = Categorias.valueOf(categoriaSelect.toUpperCase());
+        dulce.setCategoria(categoria);
+        
         vista.setDulce(dulce);
         nombretxt.setText("");
         nombretxt1.setText("");

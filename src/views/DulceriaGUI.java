@@ -23,6 +23,8 @@ import views.components.Insertar;
 import views.components.Listar;
 import views.components.actualizar;
 
+import views.components.acercade;
+
 /**
  *
  * @author DELL
@@ -236,6 +238,9 @@ public class DulceriaGUI extends javax.swing.JFrame implements views.View{
         TextoAcercade.setText("Acerca de");
         TextoAcercade.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         TextoAcercade.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextoAcercadeMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 TextoAcercadeMouseEntered(evt);
             }
@@ -425,7 +430,7 @@ public class DulceriaGUI extends javax.swing.JFrame implements views.View{
     }//GEN-LAST:event_TextoInsertarMouseClicked
 
     private void TextoActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextoActualizarMouseClicked
-        actualizar i3 = new actualizar();
+        actualizar i3 = new actualizar(controller);
         i3.setSize(530,510);
         i3.setLocation(0,0);
         
@@ -467,6 +472,15 @@ public class DulceriaGUI extends javax.swing.JFrame implements views.View{
         Ventana.revalidate();
         Ventana.repaint();
     }//GEN-LAST:event_TextoListarMouseClicked
+    private void TextoAcercadeMouseClicked(java.awt.event.MouseEvent evt) {                                           
+        acercade i7 = new acercade();
+        i7.setSize(530,510);
+        i7.setLocation(0,0);
+        Ventana.removeAll();
+        Ventana.add(i7,BorderLayout.CENTER);
+        Ventana.revalidate();
+        Ventana.repaint();
+    } 
 
     /**
      * @param args the command line arguments
