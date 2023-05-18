@@ -12,7 +12,7 @@ public class ViewConsole {
     String descripcion;
     Categorias categoria;
     int precio,indice;
-    Dulce prueba;
+    Dulce candy;
     DulceriaController controller;
 
    
@@ -56,7 +56,7 @@ public class ViewConsole {
                     String category = read.nextLine();
                     categoria = Categorias.valueOf(category.toUpperCase());
                     
-                    prueba = new Dulce(nombre, precio, descripcion, categoria);
+                    candy= new Dulce(nombre, precio, descripcion, categoria);
                     control.insertar(); break;
 
                 case 2: control.listar();
@@ -119,7 +119,7 @@ public class ViewConsole {
 
  
     public Dulce agregarDulce(Dulce dulce) {
-        return prueba;
+        return candy;
     }
 
     public void eliminarDulce(int index,ArrayList <Dulce> dulces) {

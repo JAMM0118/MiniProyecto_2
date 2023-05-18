@@ -5,12 +5,11 @@
 package views.com.interfaz;
 
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -90,7 +89,7 @@ public class interfaz extends javax.swing.JFrame implements views.View{
 
         TextoDigiteOpcion.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
         TextoDigiteOpcion.setForeground(new java.awt.Color(255, 255, 255));
-        TextoDigiteOpcion.setText("Digite la opción a realizar");
+        TextoDigiteOpcion.setText("Seleccione la opción a realizar");
 
         Panelinsertar.setBackground(new java.awt.Color(134, 36, 115));
         Panelinsertar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
