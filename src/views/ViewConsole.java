@@ -7,7 +7,7 @@ import controller.DulceriaController;
 import models.Categorias;
 import models.Dulce;
 
-public class ViewConsole{
+public class ViewConsole implements View{
     String nombre;
     String descripcion;
     Categorias categoria;
@@ -39,7 +39,7 @@ public class ViewConsole{
             switch(eleccion){
                     
                 case 1:
-                read.nextLine();
+                    read.nextLine();
                 
                     System.out.print("Digite el nombre del dulce: ");
                     nombre = read.nextLine();
@@ -100,7 +100,7 @@ public class ViewConsole{
                     control.listar();
                     System.out.print("\nDigite el numero en lista del dulce a eliminar: ");
                     indice = read.nextInt();
-                    control.eliminar(indice); break;
+                    control.eliminar(indice-1); break;
 
                 case 4: 
                     read.nextLine();
@@ -121,10 +121,10 @@ public class ViewConsole{
     public Dulce agregarDulce(Dulce dulce) {
         return candy;
     }
-
-    public void eliminarDulce(int index,ArrayList <Dulce> dulces) {
-        dulces.remove(index); 
-    }
+    
+    //public void eliminarDulce(int index,ArrayList <Dulce> dulces) {
+    //    dulces.remove(index); 
+    //}
 
     public void listadoDeDulces(ArrayList <Dulce> dulces) {
         System.out.print("\n -- Lista de dulces --"+"\n");
@@ -134,7 +134,7 @@ public class ViewConsole{
             i++;
         }
     }
-
+    @Override
     public void buscarDulcePorNombre(String nombreDulce, ArrayList<Dulce> dulces) {
         System.out.print("\nInformacion del dulce buscado"+"\n");
         for(Dulce dulce : dulces){
@@ -145,4 +145,20 @@ public class ViewConsole{
     }
 
     public void actualizarDulce( Dulce dulce,int index) {}
+
+    @Override
+    public void setDulce(Dulce dulce) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setDulce'");
+    }
+
+
+    @Override
+    public void eliminarDulce(int index) {}
+
+
+    @Override
+    public Dulce getDulce() {
+        return candy;
+    }
 }
