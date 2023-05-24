@@ -556,7 +556,7 @@ public class DulceriaGUI extends javax.swing.JFrame implements views.View{
     }
 
     @Override
-    public void buscarDulcePorNombre(String nombreDulce, ArrayList<Dulce> dulce) {
+    public Dulce buscarDulcePorNombre(String nombreDulce, ArrayList<Dulce> dulce) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'buscarDulcePorNombre'");
     }
