@@ -106,7 +106,7 @@ public class ViewConsole implements View{
                     read.nextLine();
                     System.out.print("Digite el nombre del dulce a buscar: ");
                     String name = read.nextLine(); 
-                    control.buscarPorNombre(name);break;
+                    System.out.println(control.buscarPorNombre(name));break;
 
                 case 5:control.listar(); break;
                     
@@ -135,13 +135,15 @@ public class ViewConsole implements View{
         }
     }
     @Override
-    public void buscarDulcePorNombre(String nombreDulce, ArrayList<Dulce> dulces) {
+    public Dulce buscarDulcePorNombre(String nombreDulce, ArrayList<Dulce> dulces) {
         System.out.print("\nInformacion del dulce buscado"+"\n");
         for(Dulce dulce : dulces){
             if (dulce.getNombre().toLowerCase().equals(nombreDulce.toLowerCase())) {
                 System.out.println(dulce+"");
+                return dulce;
             }
         }
+        return null;
     }
 
     public void actualizarDulce( Dulce dulce,int index) {}
