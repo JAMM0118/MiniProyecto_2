@@ -1,4 +1,8 @@
+
 package models;
+
+import java.util.EnumSet;
+import java.util.Set;
 
 public class Dulce {
     private String nombre,descripcion;
@@ -48,7 +52,7 @@ public class Dulce {
     }
     @Override
     public String toString() {
-        return "Nombre: " + nombre + " -- Categoría: " + categoria + " -- Precio: " + precio;
+        return "Nombre: " + nombre + " -- Categoría: " + categoria.mostrarNombre() + " -- Precio: " + precio;
     }
 }
 
