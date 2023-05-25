@@ -1,6 +1,5 @@
 
 import controller.DulceriaController;
-import models.Dulce;
 import models.Dulceria;
 import views.View;
 import views.ViewConsole;

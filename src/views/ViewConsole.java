@@ -54,6 +54,9 @@ public class ViewConsole implements View{
                     
                     System.out.print("Digite la categoria del dulce (Dulce, Sin Azucar, Acido): ");
                     String category = read.nextLine();
+                    if(category.toLowerCase().equals("sin azucar")){
+                        category = "sinazucar";
+                    }
                     categoria = Categorias.valueOf(category.toUpperCase());
                     
                     candy= new Dulce(nombre, precio, descripcion, categoria);
@@ -80,6 +83,9 @@ public class ViewConsole implements View{
                                 read.nextLine();
                                 System.out.print("Digite la nueva categoria (Acido -Sin Azucar - Dulce): ");
                                 String ayuda = read.nextLine();
+                                if(ayuda.toLowerCase().equals("sin azucar")){
+                                    ayuda = "sinazucar";
+                                }
                                 categoria = Categorias.valueOf(ayuda.toUpperCase());
                                 control.actualizar(indice,null,null,0,categoria);break;
                             case 3:
@@ -130,7 +136,7 @@ public class ViewConsole implements View{
         System.out.print("\n -- Lista de dulces --"+"\n");
         int i=1;
         for(Dulce dulce : dulces){
-            System.out.print(i+". " + dulce + " ");
+            System.out.print(i+". " + dulce + " \n");
             i++;
         }
     }
