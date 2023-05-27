@@ -52,13 +52,17 @@ public class ViewConsole implements View{
                         categoria = Categorias.valueOf(category.toUpperCase());
                                     
                     }else{
-                        System.out.println("Esta categoria no existe. vuelve a empezar");break;
+                        System.out.println("Esta categoria no existe. vuelve a empezar");
+                        System.out.println("\nPresione enter para continuar..... ");
+                        read.nextLine();break;
                     }
                     System.out.print("Digite el precio del dulce: ");
                     precio = read.nextLine();
                     candy= new Dulce(nombre, Integer.parseInt(precio), descripcion, categoria);
                     control.insertar();
                     System.out.println("Dulce insertado correctamente");
+                    System.out.println("\nPresione enter para continuar..... ");
+                    read.nextLine();
                     break;
 
                 case 2: 
@@ -86,6 +90,8 @@ public class ViewConsole implements View{
                                 nombre = read.nextLine();
                                 control.actualizar(Integer.parseInt(indice),nombre,null,0,null);
                                 System.out.println("Nombre actualizado correctamente");
+                                System.out.println("\nPresione enter para continuar..... ");
+                                read.nextLine();
                                 break;
                             case 2:
                                 System.out.print("Digite la nueva categoria (Acido -Sin Azucar - Dulce): ");
@@ -98,9 +104,13 @@ public class ViewConsole implements View{
                                     categoria = Categorias.valueOf(ayuda.toUpperCase());
                                     control.actualizar(Integer.parseInt(indice),null,null,0,categoria);
                                     System.out.println("Categoria actualizada correctamente");
+                                    System.out.println("\nPresione enter para continuar..... ");
+                                    read.nextLine();
                                     break;
                                 }else{
-                                    System.out.println("Esta categoria no existe. vuelve a empezar");break;
+                                    System.out.println("Esta categoria no existe. vuelve a empezar");
+                                    System.out.println("\nPresione enter para continuar..... ");
+                                    read.nextLine();break;
                                 }
                                 
                             case 3:
@@ -108,6 +118,8 @@ public class ViewConsole implements View{
                                 descripcion = read.nextLine();
                                 control.actualizar(Integer.parseInt(indice),null,descripcion,0,null);
                                 System.out.println("Descripcion actualizada correctamente");
+                                System.out.println("\nPresione enter para continuar..... ");
+                            read.nextLine();
                                 
                                 break;
                             case 4:
@@ -115,8 +127,12 @@ public class ViewConsole implements View{
                                 precio = read.nextLine();
                                 control.actualizar(Integer.parseInt(indice),null,null,Integer.parseInt(precio),null);
                                 System.out.println("Precio actualizado correctamente");
+                                System.out.println("\nPresione enter para continuar..... ");
+                                read.nextLine();
                                 break;
-                            default:  System.out.println("Esta opcion no existe");break;
+                            default:  System.out.println("Esta opcion no existe");
+                            System.out.println("\nPresione enter para continuar..... ");
+                            read.nextLine();break;
                         }
                     break;
                 case 3: 
@@ -129,6 +145,8 @@ public class ViewConsole implements View{
                         }
                         }while(Integer.parseInt(indice)>control.listadoDulces().length);
                         System.out.println("Dulce eliminado correctamente");
+                        System.out.println("\nPresione enter para continuar..... ");
+                        read.nextLine();
                         control.eliminar((Integer.parseInt(indice))-1);break;
 
                 case 4: 
@@ -136,23 +154,35 @@ public class ViewConsole implements View{
                     String name = read.nextLine();
                     if(control.buscarPorNombre(name) == null){
                         System.out.println("El dulce no ha sido encontrado");
+                        System.out.println("\nPresione enter para continuar..... ");
+                        read.nextLine();
                     }else{
                         System.out.println(control.buscarPorNombre(name));
+                        System.out.println("\nPresione enter para continuar..... ");
+                        read.nextLine();
                     } break;
 
                 case 5:
                     if(control.listadoDulces().length > 0){
-                        control.listar(); break;
+                        control.listar();
+                        System.out.println("\nPresione enter para continuar..... ");
+                        read.nextLine(); break;
                     }else{
-                        System.out.println("No hay dulces en lista todavia");break;
+                        System.out.println("No hay dulces en lista todavia");
+                        System.out.println("\nPresione enter para continuar..... ");
+                        read.nextLine();break;
                     }
                     
                 case 6: System.exit(0);
-                default: System.out.println("Esta opcion no existe. Elije una opcion valida");break;
+                default: System.out.println("Esta opcion no existe. Elije una opcion valida");
+                System.out.println("\nPresione enter para continuar..... ");
+                read.nextLine();break;
                 
             }
             }catch (NumberFormatException e) {
             System.out.println("La entrada esperaba un numero vuelva a realizar la accion");
+            System.out.println("\nPresione enter para continuar..... ");
+                read.nextLine();
             }
         }
         control.actionPerformed(null);
