@@ -2,16 +2,14 @@ package views;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import controller.DulceriaController;
 import models.Categorias;
 import models.Dulce;
 
 public class ViewConsole implements View{
-    String nombre;
-    String descripcion;
+    String nombre,precio,indice;
+    String descripcion,decision;
     Categorias categoria;
-    int precio,indice;
     Dulce candy;
     DulceriaController controller;
 
@@ -20,7 +18,6 @@ public class ViewConsole implements View{
         boolean continuar = true;
         Scanner read = new Scanner(System.in);
         this.controller = control;
-
 
         while(continuar){
             System.out.print("\n");
@@ -33,105 +30,139 @@ public class ViewConsole implements View{
             System.out.println("5. Listar todos los dulces");
             System.out.println("6. Salir");
             System.out.print("\n");
+            
             System.out.print("Seleccion una opcion: ");
-            int eleccion = read.nextInt();
-
-            switch(eleccion){
+            String eleccion = read.nextLine();
+            try{
+                switch(Integer.parseInt(eleccion)){
                     
                 case 1:
-                    read.nextLine();
-                
                     System.out.print("Digite el nombre del dulce: ");
                     nombre = read.nextLine();
                     
                     System.out.print("Digite la descripcion del dulce: ");
                     descripcion = read.nextLine();
-                    
-                    System.out.print("Digite el precio del dulce: ");
-                    precio = read.nextInt();
-                    
-                    read.nextLine();
-                    
                     System.out.print("Digite la categoria del dulce (Dulce, Sin Azucar, Acido): ");
                     String category = read.nextLine();
-                    if(category.toLowerCase().equals("sin azucar")){
-                        category = "sinazucar";
+                    if(category.toLowerCase().equals("sin azucar") || category.toLowerCase().equals("dulce") ||
+                    category.toLowerCase().equals("acido") ){
+                        if(category.toLowerCase().equals("sin azucar")){
+                            category = "sinazucar";
+                        }
+                        categoria = Categorias.valueOf(category.toUpperCase());
+                                    
+                    }else{
+                        System.out.println("Esta categoria no existe. vuelve a empezar");break;
                     }
-                    categoria = Categorias.valueOf(category.toUpperCase());
-                    
-                    candy= new Dulce(nombre, precio, descripcion, categoria);
-                    control.insertar(); break;
+                    System.out.print("Digite el precio del dulce: ");
+                    precio = read.nextLine();
+                    candy= new Dulce(nombre, Integer.parseInt(precio), descripcion, categoria);
+                    control.insertar();
+                    System.out.println("Dulce insertado correctamente");
+                    break;
 
-                case 2: control.listar();
-                        read.nextLine();
+                case 2: 
+                        control.listar();
+                        do{
                         System.out.print("\nSelecione el numero en lista del dulce a modificar: ");
-                        indice = read.nextInt();
+                        indice = read.nextLine();
+                            if(Integer.parseInt(indice)>control.listadoDulces().length){
+                                System.out.println("Este numero no esta en el rango de los dulces ingresados"); 
+                            }
+                        }while(Integer.parseInt(indice)>control.listadoDulces().length);
+
                         System.out.println("\n¿Que desea modificar?");
                         System.out.println("\n1. Modificar nombre");
                         System.out.println("2. Modificar categoria");
                         System.out.println("3. Modificar descripcion");
-                        System.out.println("4. Modificar precio"); 
-                        System.out.print("\n Seleccion una opcion: "); 
-                        int decision = read.nextInt();
-                        switch(decision){
+                        System.out.println("4. Modificar precio");
+                            
+                        System.out.print("Selecione una opcion: "); 
+                        decision = read.nextLine();
+                        
+                        switch(Integer.parseInt(decision)){
                             case 1: 
-                                read.nextLine();
                                 System.out.print("Digite el nuevo nombre: ");
                                 nombre = read.nextLine();
-                                control.actualizar(indice,nombre,null,0,null);break;
+                                control.actualizar(Integer.parseInt(indice),nombre,null,0,null);
+                                System.out.println("Nombre actualizado correctamente");
+                                break;
                             case 2:
-                                read.nextLine();
                                 System.out.print("Digite la nueva categoria (Acido -Sin Azucar - Dulce): ");
                                 String ayuda = read.nextLine();
-                                if(ayuda.toLowerCase().equals("sin azucar")){
+                                if(ayuda.toLowerCase().equals("sin azucar") || ayuda.toLowerCase().equals("dulce") ||
+                                ayuda.toLowerCase().equals("acido") ){
+                                    if(ayuda.toLowerCase().equals("sin azucar")){
                                     ayuda = "sinazucar";
+                                    }
+                                    categoria = Categorias.valueOf(ayuda.toUpperCase());
+                                    control.actualizar(Integer.parseInt(indice),null,null,0,categoria);
+                                    System.out.println("Categoria actualizada correctamente");
+                                    break;
+                                }else{
+                                    System.out.println("Esta categoria no existe. vuelve a empezar");break;
                                 }
-                                categoria = Categorias.valueOf(ayuda.toUpperCase());
-                                control.actualizar(indice,null,null,0,categoria);break;
+                                
                             case 3:
-                                read.nextLine();
                                 System.out.print("Digite la nueva descripcion: ");
                                 descripcion = read.nextLine();
-                                control.actualizar(indice,null,descripcion,0,null);break;
+                                control.actualizar(Integer.parseInt(indice),null,descripcion,0,null);
+                                System.out.println("Descripcion actualizada correctamente");
+                                
+                                break;
                             case 4:
-                                read.nextLine();
                                 System.out.print("Digite el nuevo precio: ");
-                                precio = read.nextInt();
-                                control.actualizar(indice,null,null,precio,null);break;
+                                precio = read.nextLine();
+                                control.actualizar(Integer.parseInt(indice),null,null,Integer.parseInt(precio),null);
+                                System.out.println("Precio actualizado correctamente");
+                                break;
+                            default:  System.out.println("Esta opcion no existe");break;
                         }
                     break;
-
                 case 3: 
-                    read.nextLine();
                     control.listar();
-                    System.out.print("\nDigite el numero en lista del dulce a eliminar: ");
-                    indice = read.nextInt();
-                    control.eliminar(indice-1); break;
+                    do{
+                        System.out.print("\nDigite el numero en lista del dulce a eliminar: ");
+                        indice = read.nextLine();
+                        if(Integer.parseInt(indice)>control.listadoDulces().length){
+                            System.out.println("Este numero no esta en el rango de los dulces ingresados"); 
+                        }
+                        }while(Integer.parseInt(indice)>control.listadoDulces().length);
+                        System.out.println("Dulce eliminado correctamente");
+                        control.eliminar((Integer.parseInt(indice))-1);break;
 
                 case 4: 
-                    read.nextLine();
                     System.out.print("Digite el nombre del dulce a buscar: ");
-                    String name = read.nextLine(); 
-                    System.out.println(control.buscarPorNombre(name));break;
+                    String name = read.nextLine();
+                    if(control.buscarPorNombre(name) == null){
+                        System.out.println("El dulce no ha sido encontrado");
+                    }else{
+                        System.out.println(control.buscarPorNombre(name));
+                    } break;
 
-                case 5:control.listar(); break;
+                case 5:
+                    if(control.listadoDulces().length > 0){
+                        control.listar(); break;
+                    }else{
+                        System.out.println("No hay dulces en lista todavia");break;
+                    }
                     
                 case 6: System.exit(0);
+                default: System.out.println("Esta opcion no existe. Elije una opcion valida");break;
+                
+            }
+            }catch (NumberFormatException e) {
+            System.out.println("La entrada esperaba un numero vuelva a realizar la accion");
             }
         }
         control.actionPerformed(null);
         read.close();
     }
 
- 
     public Dulce agregarDulce(Dulce dulce) {
         return candy;
     }
     
-    //public void eliminarDulce(int index,ArrayList <Dulce> dulces) {
-    //    dulces.remove(index); 
-    //}
-
     public void listadoDeDulces(ArrayList <Dulce> dulces) {
         System.out.print("\n -- Lista de dulces --"+"\n");
         int i=1;
@@ -160,10 +191,8 @@ public class ViewConsole implements View{
         throw new UnsupportedOperationException("Unimplemented method 'setDulce'");
     }
 
-
     @Override
     public void eliminarDulce(int index) {}
-
 
     @Override
     public Dulce getDulce() {

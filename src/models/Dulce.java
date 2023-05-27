@@ -1,8 +1,6 @@
 
 package models;
 
-import java.util.EnumSet;
-import java.util.Set;
 
 public class Dulce {
     private String nombre,descripcion;
