@@ -66,6 +66,11 @@ public class ViewConsole implements View{
                     break;
 
                 case 2: 
+                        if(control.listadoDulces().length == 0){
+                            System.out.println("\nNo hay dulces en lista todavia");
+                            System.out.println("\nPresione enter para continuar..... ");
+                            read.nextLine();break;
+                        }
                         control.listar();
                         do{
                         System.out.print("\nSelecione el numero en lista del dulce a modificar: ");
@@ -168,7 +173,7 @@ public class ViewConsole implements View{
                         System.out.println("\nPresione enter para continuar..... ");
                         read.nextLine(); break;
                     }else{
-                        System.out.println("No hay dulces en lista todavia");
+                        System.out.println("\nNo hay dulces en lista todavia");
                         System.out.println("\nPresione enter para continuar..... ");
                         read.nextLine();break;
                     }
